@@ -1,0 +1,24 @@
+
+default: &default
+  adapter: postgresql
+  encoding: unicode
+  host: db
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+
+development:
+  <<: *default
+  username: postgres
+  password: postgres
+  database: ZSSN_development
+
+test:
+  <<: *default
+  username: postgres
+  password: postgres
+  database: ZSSN_test
+
+production:
+  <<: *default
+  database: ZSSN_production
+  username: ZSSN
+  password: <%= ENV["ZSSN_DATABASE_PASSWORD"] %>
