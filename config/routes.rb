@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/users/create', to: 'users#create'
+      put '/users/update_user_items', to: 'users#update_user_items'
     end
   end
 end
