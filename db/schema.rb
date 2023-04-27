@@ -31,7 +31,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_234739) do
 
   create_table "user_positions", force: :cascade do |t|
     t.string "lat"
-    t.string "Long"
+    t.string "long"
     t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
