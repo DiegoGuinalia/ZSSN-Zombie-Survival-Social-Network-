@@ -10,4 +10,10 @@ class Api::V1::UsersController < ApplicationController
 
     body(result)
   end
+
+  def delete_user_items
+    result = Delete::UserItems.call(params: params)
+
+    body(result)
+  end
 end
