@@ -6,6 +6,7 @@ module Update
     delegate :params, to: :context
 
     def call
+      infected_user?
       within_transaction do
         create_or_update_items
       end

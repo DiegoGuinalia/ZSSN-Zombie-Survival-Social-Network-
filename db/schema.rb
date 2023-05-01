@@ -10,9 +10,16 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2023_04_21_234739) do
+ActiveRecord::Schema[7.0].define(version: 2023_05_01_191555) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "infected_users", force: :cascade do |t|
+    t.integer "user_id", null: false
+    t.integer "informant_id", null: false
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "items", force: :cascade do |t|
     t.string "name"
@@ -44,6 +51,7 @@ ActiveRecord::Schema[7.0].define(version: 2023_04_21_234739) do
     t.string "gender"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.boolean "infected"
   end
 
 end

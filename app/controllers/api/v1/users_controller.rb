@@ -16,4 +16,10 @@ class Api::V1::UsersController < ApplicationController
 
     body(result)
   end
+
+  def mark_as_infected
+    result = Update::InfectedUser.call(params: params)
+
+    body(result)
+  end
 end

@@ -15,4 +15,16 @@ module Utils
     has_user = ::User.where(id: params[:user_id]).exists?
     context.fail!(error: "user doesn't exist") unless has_user
   end
+
+  def user
+    User.find_by(id: params[:user_id])
+  end
+
+  def user_items
+    user.user_items
+  end
+
+  def infected_user?
+    context.fail!(error: "user is infected") if user.infected
+  end
 end
