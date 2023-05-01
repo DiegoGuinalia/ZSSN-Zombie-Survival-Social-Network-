@@ -24,6 +24,14 @@ module Utils
     user.user_items
   end
 
+  def has_not_user_items(user_items)
+    user_items.nil? || user_items.empty?
+  end
+
+  def find_user_item(user, item)
+    user.user_items.find_by(item: item)
+  end
+
   def infected_user?
     context.fail!(error: "user is infected") if user.infected
   end

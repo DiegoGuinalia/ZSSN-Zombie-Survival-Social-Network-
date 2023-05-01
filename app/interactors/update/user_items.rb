@@ -35,21 +35,5 @@ module Update
         quantity: context_item[:quantity]
       )
     end
-
-    def user
-      User.find_by(id: params[:user_id])
-    end
-
-    def user_items
-      user.user_items
-    end
-
-    def has_not_user_items(user_items)
-      user_items.nil? || user_items.empty?
-    end
-
-    def find_user_item(user, item)
-      user.user_items.find_by(item: item)
-    end
   end
 end
