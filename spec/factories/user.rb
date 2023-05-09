@@ -1,10 +1,6 @@
 # frozen_string_literal: true
 
 FactoryBot.define do
-  factory :infected_user do
-    user_id { 1 }
-  end
-
   factory(:user) do
     name { Faker::Name.name }
     age { Faker::Number.decimal_part(digits: 2) }
