@@ -5,6 +5,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       post '/users/create', to: 'users#create'
+      post '/users/trade_user_items', to: 'users#trade_user_items'
       put 'users/mark_as_infected', to: 'users#mark_as_infected'
       put '/users/update_user_items', to: 'users#update_user_items'
       delete '/users/delete_user_items', to: 'users#delete_user_items'

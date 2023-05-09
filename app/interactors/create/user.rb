@@ -15,7 +15,6 @@ module Create
     private
 
     def create_user
-      user = ::User.find_by(id: params[:user_id])
       if user.nil?
         return context.user = ::User.create(
           context.user_data

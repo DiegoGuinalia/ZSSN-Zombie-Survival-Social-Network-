@@ -18,6 +18,7 @@ module Update
       context.user_item_data.map do |context_item|
         item = Item.find_by(name: context_item[:name])
         user_item = find_user_item(user, item)
+        user_items = user_items(user)
 
         if has_not_user_items(user_items) || !user_item
           create_item(user, item, context_item)

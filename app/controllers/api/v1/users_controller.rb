@@ -22,4 +22,10 @@ class Api::V1::UsersController < ApplicationController
 
     body(result)
   end
+
+  def trade_user_items
+    result = PlaceUserItemTrades.call(params: params)
+
+    body(result)
+  end
 end

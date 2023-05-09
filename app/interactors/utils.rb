@@ -16,11 +16,11 @@ module Utils
     context.fail!(error: "user doesn't exist") unless has_user
   end
 
-  def user
-    User.find_by(id: params[:user_id])
+  def user(id = nil)
+    User.find_by(id: id || params[:user_id])
   end
 
-  def user_items
+  def user_items(user)
     user.user_items
   end
 

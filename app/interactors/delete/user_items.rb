@@ -23,19 +23,11 @@ module Delete
     def delete_user_items
       item_ids
 
-      user_items.where(item_id: item_ids).destroy_all
-    end
-
-    def user
-      User.find_by(id: params[:user_id])
-    end
-
-    def user_items
-      user.user_items
+      user_items(user).where(item_id: item_ids).destroy_all
     end
 
     def item_ids
-      user_items.map{|ui| ui.item_id if params[:items].include?(ui.item.name)}.compact
+      user_items(user).map{|ui| ui.item_id if params[:items].include?(ui.item.name)}.compact
     end
   end
 end

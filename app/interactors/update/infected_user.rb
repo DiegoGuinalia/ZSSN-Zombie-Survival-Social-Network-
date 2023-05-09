@@ -21,7 +21,7 @@ module Update
     end
 
     def create_infected_user_history
-      InfectedUser.create(user_id: params[:user_id], informant_id: params[:informant_id])
+      ::InfectedUser.create(user_id: params[:user_id], informant_id: params[:informant_id])
     end
 
     def mark_as_infected
@@ -31,7 +31,7 @@ module Update
     end
 
     def should_mark_as_infected?
-      InfectedUser.where(user_id: params[:user_id]).size >= 2
+      ::InfectedUser.where(user_id: params[:user_id]).size >= 2
     end
   end
 end
