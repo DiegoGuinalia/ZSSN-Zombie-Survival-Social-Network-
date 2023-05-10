@@ -6,7 +6,8 @@
 ##   Data Modeling
 
 Please find below the data modeling for the database:
-![image info](https://i.ibb.co/qNSr28m/Screenshot-from-2023-05-10-03-28-06.png)
+
+[image info](https://i.ibb.co/qNSr28m/Screenshot-from-2023-05-10-03-28-06.png)
 
 ## Running server
 
